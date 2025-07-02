@@ -3,6 +3,17 @@ export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
   ssr: true,
   devtools: { enabled: true },
+  app: {
+    head: {
+      title: 'TMDB Nuxt 3 Movie Browser',
+      htmlAttrs: {
+        lang: 'en',
+      },
+      meta: [
+        { name: 'description', content: 'Browse trending movies and TV shows with TMDB API, powered by Nuxt 3 and Firebase' }
+      ],
+    },
+  },
   runtimeConfig: {
     public: {
       tmdbToken: process.env.TMDB_TOKEN,
